@@ -1,0 +1,17 @@
+body {
+    background-color: black;
+}
+
+.myTitle {
+    margin-top: 100px;
+    font-family: 'Pacifico', cursive;
+    font-size: 100px;
+}
+.intro {
+    margin-top: 100px;
+    font-size: 40px;
+}
+
+.sneakersGif {
+    margin-bottom: 50px;
+}
