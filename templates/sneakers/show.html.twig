@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Sneakers{% endblock %}
+
+{% block body %}
+    <h1>Sneakers</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ sneaker.id }}</td>
+            </tr>
+            <tr>
+                <th>Text</th>
+                <td>{{ sneaker.text }}</td>
+            </tr>
+            <tr>
+                <th>CreatedAt</th>
+                <td>{{ sneaker.createdAt ? sneaker.createdAt|date('Y-m-d') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('sneakers_index') }}">back to list</a>
+
+    <a href="{{ path('sneakers_edit', {'id': sneaker.id}) }}">edit</a>
+
+    {{ include('sneakers/_delete_form.html.twig') }}
+{% endblock %}
