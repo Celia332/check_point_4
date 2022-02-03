@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Nouvel article sneakers - {{ parent() }}{% endblock %}
+
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
+{% block body %}
+    <div class="bg-black pt-5" style="min-height: 100vh;">
+        <div class='container w-50 text-white'>
+            <h1 class="d-flex justify-content-center mb-5">Créer un nouvel article</h1>
+            {% include('admin/sneakers/_form.html.twig') %}
+            <a href="{{ path('admin_index') }}">Retour à l'administration</a>
+        </div>
+    </div>
+{% endblock %}

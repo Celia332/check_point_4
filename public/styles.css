@@ -1,12 +1,15 @@
 body {
-    background-color: black;
+background-color:  black;
 }
-
+.footer_blocker {
+    min-height: 120vh;
+}
 .myTitle {
     margin-top: 100px;
     font-family: 'Pacifico', cursive;
     font-size: 100px;
 }
+
 .intro {
     margin-top: 100px;
     font-size: 40px;
@@ -14,4 +17,8 @@ body {
 
 .sneakersGif {
     margin-bottom: 50px;
+}
+
+.card-img-top {
+    width: 1px;
 }

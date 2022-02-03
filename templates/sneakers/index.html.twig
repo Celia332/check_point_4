@@ -1,37 +1,26 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Sneakers index{% endblock %}
+    {% block title %}Les actualités sneakers{% endblock %}
 
-{% block body %}
-    <h1>Sneakers index</h1>
+    {% block body %}
+        <div class="bg-black pt-5" style="min-height: 100vh;">
+            <h1 class="text-white text-center"> LES ACTUALITÉS SNEAKERS </h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Text</th>
-                <th>CreatedAt</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for sneaker in sneakers %}
-            <tr>
-                <td>{{ sneaker.id }}</td>
-                <td>{{ sneaker.text }}</td>
-                <td>{{ sneaker.createdAt ? sneaker.createdAt|date('Y-m-d') : '' }}</td>
-                <td>
-                    <a href="{{ path('sneakers_show', {'id': sneaker.id}) }}">show</a>
-                    <a href="{{ path('sneakers_edit', {'id': sneaker.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="4">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+            <div class="row row-cols-1 row-cols-md-4 g-4 px-3 m-4">
+                {% for sneaker in sneakers %}
+                    <div class="col">
+                        <div class="card h-100">
+                            <img src="{{ sneaker.url }}">
+                            <div class="card-body">
+                                <h2 class="card-title fs-4">{{ sneaker.title }}</h2>
+                                <p><a href="{{ path('showsneaker', {'id': sneaker.id}) }}">Voir l'article</a>
+                                </p>
 
-    <a href="{{ path('sneakers_new') }}">Create new</a>
-{% endblock %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+        </div>
+    {% endblock %}
