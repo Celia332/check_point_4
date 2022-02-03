@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+    {% block title %}Les actualités sneakers{% endblock %}
+
+    {% block body %}
+        <div class="bg-black pt-5" style="min-height: 100vh;">
+            <h1 class="text-white text-center"> LES ACTUALITÉS SNEAKERS </h1>
+
+            <div class="row row-cols-1 row-cols-md-4 g-4 px-3 m-4">
+                {% for sneaker in sneakers %}
+                    <div class="col">
+                        <div class="card h-100">
+                            <img src="{{ sneaker.url }}">
+                            <div class="card-body">
+                                <h2 class="card-title fs-4">{{ sneaker.title }}</h2>
+                                <p><a href="{{ path('showsneaker', {'id': sneaker.id}) }}">Voir l'article</a>
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+        </div>
+    {% endblock %}

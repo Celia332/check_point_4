@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Édition mon article {% endblock %}
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
+
+
+{% block body %}
+    <div class="bg-black" style="min-height: 90vh;">
+
+    <div class='container w-50 text-white pt-5'>
+        <div class="mb-5">
+            <h1 class="d-flex justify-content-center">Éditer l'article</h1>
+        </div>
+
+        {{ include('admin/sneakers/_form.html.twig', {'button_label': 'Mettre à jour mon article'}) }}
+        <div class="mt-4">
+            <a href="{{ path('admin_index') }}">Retour à l'administration</a>
+        </div>
+
+    </div>
+    </div>
+{% endblock %}

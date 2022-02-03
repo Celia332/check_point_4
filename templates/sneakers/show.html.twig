@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="bg-black" style="min-height: 100vh;">
+        <div>
+            <h1 class="text-center text-white">{{ sneaker.title }}</h1>
+            <div class="row row-cols-1 row-cols-md-4 g-4 px-3 m-4">
+                <img src="{{ sneaker.url }}">
+
+                <div>
+                    <p class="text-white ms-5">{{ sneaker.text }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
