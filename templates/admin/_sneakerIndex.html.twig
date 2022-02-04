@@ -1,21 +1,22 @@
 <div class="container admin text-white footer_blocker">
 
-    <h1 class="text-center mb-5">Page d'administration</h1>
+    <h1 class="text-center mb-5 py-5">Page administration</h1>
     <h2 class="mb-5">Gestion des articles sneakers</h2>
     {% for sneaker in sneakers %}
         <table>
             <tr>
                 <td class=''>{{ sneaker.title }}</td>
                 <td>
-                    <a href="{{ path('showsneaker', {'id': sneaker.id}) }}">Voir l'article</a>
-                    <a href="{{ path('admin_sneaker_edit', {'id': sneaker.id}) }}">Éditer l'article</a>
+                    <a class="text-warning" href="{{ path('showsneaker', {'id': sneaker.id}) }}">Voir l'article</a>
+                    <a class="text-warning" href="{{ path('admin_sneaker_edit', {'id': sneaker.id}) }}">Éditer l'article</a>
                 </td>
             </tr>
         </table>
     {% endfor %}
     <div class="mt-5">
 
-        <a href="{{ path('admin_app_admin_newsneaker') }}">Créer un nouvel article sneakers </a>
+        <a class="text-warning" href="{{ path('admin_app_admin_newsneaker') }}">Créer un nouvel article sneakers </a>
     </div>
 
 </div>
+
