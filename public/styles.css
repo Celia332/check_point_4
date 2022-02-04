@@ -22,3 +22,10 @@ background-color:  black;
 .card-img-top {
     width: 1px;
 }
+.container {
+    background-color: black;
+}
+
+.bg-black {
+    background: black;
+}
