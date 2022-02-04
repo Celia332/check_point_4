@@ -57,7 +57,7 @@ class AdminController extends AbstractController
      * @Route("/sneaker/{id}", name="sneaker_show")
      */
     public function showSneaker(Sneakers $sneaker): Response {
-        return $this->render('admin/sneakers/show_sneaker.html.twig', [
+        return $this->render('sneakers/show.html.twig', [
             'sneaker' =>$sneaker,
         ]);
     }
@@ -78,5 +78,19 @@ class AdminController extends AbstractController
              'sneaker'  => $sneaker,
              'form'     => $form,
          ]);
+     }
+
+     /**
+      * @Route("/sneaker/{id}", name="sneaker_delete")
+      */
+     public function deleteSneaker(Request $request, Sneakers $sneaker, EntityManagerInterface $entityManager): Response
+     {
+         if ($this->isCsrfTokenValid('delete' . $sneaker->getId(), $request->request->get('_token')))
+         {
+          $entityManager->remove($sneaker);
+          $entityManager->flush();
+          $this->addFlash('succes', 'Votre article à bien été supprimé');
+         }
+         return $this->redirectToRoute('admin_index', [], Response::HTTP_SEE_OTHER);
      }
 }
