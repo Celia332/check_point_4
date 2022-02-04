@@ -2,10 +2,10 @@ body {
 background-color:  black;
 }
 .footer_blocker {
-    min-height: 120vh;
+    min-height: 80vh;
 }
 .myTitle {
-    margin-top: 100px;
+    margin-top: 180px;
     font-family: 'Pacifico', cursive;
     font-size: 100px;
 }
