@@ -31,3 +31,4 @@ class SneakersController extends AbstractController
         ]);
     }
 }
+

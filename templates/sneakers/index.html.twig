@@ -10,17 +10,10 @@
                 {% for sneaker in sneakers %}
                     <div class="col">
                         <div class="card h-100">
-                            <img src="{{ sneaker.url }}">
-                            <div class="card-body">
-                                <h2 class="card-title fs-4">{{ sneaker.title }}</h2>
-                                <p><a class="text-black" href="{{ path('showsneaker', {'id': sneaker.id}) }}">Voir l'article</a>
-                                </p>
-
-                            </div>
+                            <img style="object-fit: cover;" src="{{ sneaker.url }}">
                         </div>
                     </div>
                 {% endfor %}
             </div>
-
         </div>
     {% endblock %}
